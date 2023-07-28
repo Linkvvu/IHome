@@ -14,7 +14,7 @@ type CaptchaSrvImpl struct{}
 func (srv *CaptchaSrvImpl) GetCaptcha(ctx context.Context, req *pb.EmptyRequest, resp *pb.Img) (err error) {
 	// generate a Captcha
 	cap := captcha.New()
-	err = cap.SetFont("comic.ttf")
+	err = cap.SetFont("/home/wuhao/myProj/goProj/IHome/services/comic.ttf")
 	if err != nil {
 		return
 	}
