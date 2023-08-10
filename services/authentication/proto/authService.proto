@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package authentication;
+
+option go_package = "github.com/Wuhao-9/IHome/services/auth";
+
+service Authentication {
+    rpc GetImgCaptcha(ImgCaptchaRequ) returns (ImgCaptchaResp);
+    rpc GetSmsCaptcha(SmsCaptchaRequ) returns (SmsCaptchaResp);
+}
+
+message SmsCaptchaRequ {
+    string uuid = 1;
+    string imageCode = 2;
+    string phoneNum = 3;
+}
+
+message SmsCaptchaResp {
+
+}
+
+message ImgCaptchaRequ {
+    string uuid = 1;
+}
+
+message ImgCaptchaResp {
+    bytes image = 1;
+}
